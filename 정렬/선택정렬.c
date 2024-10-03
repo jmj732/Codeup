@@ -14,9 +14,11 @@ int main()
             if (a[min] > a[j])
                 min = j;
         }
-        temp = a[i];
-        a[i] = a[min];
-        a[min] = temp;
+        if(i != min){
+            temp = a[i];
+            a[i] = a[min];
+            a[min] = temp;
+        }
     }
 
     for (i = 1; i <= n; i++)
