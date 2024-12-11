@@ -9,7 +9,7 @@ public:
 };
 
 int distance(Point p1, Point p2) {
-    return pow(abs(p1.x-p2.x),2) + pow(abs(p1.y - p2.y),2);
+    return pow(p1.x-p2.x,2) + pow(p1.y - p2.y,2);
 }
 
 bool isSquare(Point p1, Point p2, Point p3, Point p4) {
