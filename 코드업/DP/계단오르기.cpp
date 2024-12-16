@@ -8,7 +8,6 @@ int main(){
     std::vector<int> v(n + 1);
     for(int i = 1; i <= n; i++)
         std::cin >> v[i];
-    int score = 0;
     std::vector<int> DP(n + 1, 0);
 
     DP[1] = v[1];
@@ -16,9 +15,9 @@ int main(){
     DP[3] = std::max(v[1] + v[3], v[2] + v[3]);
 
     for(int i = 4; i <= n; i++) {
-        score = DP[i] = std::max(DP[i-2] + v[i],DP[i-3] + v[i-1] + v[i]);
+        DP[i] = std::max(DP[i-2] + v[i],DP[i-3] + v[i-1] + v[i]);
     }
-    std::cout << score;
+    std::cout << DP[n];
 
     return 0;
 }
